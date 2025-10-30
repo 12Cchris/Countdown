@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- ✅ 모바일 대응 -->
   <title>카운트다운</title>
   <style>
     body {
@@ -16,17 +17,31 @@
       text-align: center;
       margin: 0;
       overflow: hidden;
+      padding: 0 10px; /* ✅ 양옆 여백 추가 */
     }
 
     h1 {
       font-size: 2rem;
       margin-bottom: 20px;
       letter-spacing: 2px;
+      line-height: 1.4;
     }
 
     #timer {
       font-size: 2.5rem;
       font-weight: bold;
+      line-height: 1.4;
+    }
+
+    /* ✅ 모바일 반응형 (화면 너비 600px 이하일 때) */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      #timer {
+        font-size: 1.8rem;
+      }
     }
 
     /* 폭죽 효과 */
@@ -52,11 +67,11 @@
   </style>
 </head>
 <body>
-  <h1>🎉 ???까지 남은 시간 🎉</h1>
+  <h1>🎉 2025년 11월 19일까지 남은 시간 🎉</h1> <!-- ✅ 수동 제목 -->
   <div id="timer"></div>
 
   <script>
-    const targetDate = new Date("2025-11-19T00:00:00"); // 목표 날짜 수정 가능
+    const targetDate = new Date("2025-11-19T00:00:00");
 
     function updateTimer() {
       const now = new Date();
@@ -106,5 +121,6 @@
   </script>
 </body>
 </html>
+
 
 
